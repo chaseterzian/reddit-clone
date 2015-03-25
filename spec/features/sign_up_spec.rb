@@ -13,8 +13,8 @@ feature 'User can signup' do
     fill_in 'Email', with: 'archer@email.com'
     fill_in 'Password', with: 'dangerzone'
     fill_in 'Password confirmation', with: 'dangerzone'
-    within ('.signup-form') {click_on 'Sign Up'}
-
+    click_button 'Sign Up'
+    
     expect(current_path).to eq root_path
     expect(page).to have_content 'You have successfully signed up!'
   end
