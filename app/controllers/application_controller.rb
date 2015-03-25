@@ -14,6 +14,12 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def post_owner
+    if !(@post.user_id == current_user.id)
+      render file: 'public/404.html', status: :not_found, layout: false
+    end
+  end
+
   helper_method :current_user
 
 end

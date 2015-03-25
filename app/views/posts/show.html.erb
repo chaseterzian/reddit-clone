@@ -1,7 +1,7 @@
 <h1> <%= @post.title %></h1>
 <p> <%= @post.description %></p>
-<%= link_to 'All Posts', posts_path %>
-<hr>
+
+
 <h3>Comments</h3>
 <% @post.comments.each do |comment| %>
   <div class="row">
@@ -14,6 +14,7 @@
   </div>
   <h1></h1>
   <% end %>
+
   <% if current_user %>
     <div class="form-horizontal">
       <%= form_for @post.comments.new, url: post_comments_path(@post) do |f| %>
@@ -30,3 +31,12 @@
       <% end %>
     </div>
   <% end %>
+
+<hr>
+<% if current_user.id == @post.user_id %>
+<%= link_to 'Delete', post_path(@post), method: "delete" %>
+|
+<%= link_to 'Edit Post', edit_post_path(@post) %>
+|
+<% end %>
+<%= link_to 'All Posts', posts_path %>
