@@ -5,7 +5,7 @@ feature 'User can signup' do
     visit root_path
     click_link 'Sign Up'
 
-    expect(current_path).to eq '/signup'
+    expect(current_path).to eq '/sign-up'
     expect(page).to have_content 'User Sign Up'
 
     fill_in 'First name', with: 'Sterling'
@@ -14,7 +14,7 @@ feature 'User can signup' do
     fill_in 'Password', with: 'dangerzone'
     fill_in 'Password confirmation', with: 'dangerzone'
     click_button 'Sign Up'
-    
+
     expect(current_path).to eq root_path
     expect(page).to have_content 'You have successfully signed up!'
   end

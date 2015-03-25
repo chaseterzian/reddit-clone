@@ -7,19 +7,19 @@
 
           <%= form_for @user, url: sign_up_path do |f| %>
 
-          <h3><strong>Signup</strong></h3>
+          <h3><strong>User Sign Up</strong></h3>
           <hr>
 
           <div class="form-group">
             <div>
-              <%= f.label :first_name, "First Name" %>
+              <%= f.label :first_name, "First name" %>
               <%= f.text_field :first_name, class: "form-control" %>
             </div>
           </div>
 
           <div class="form-group">
             <div>
-              <%= f.label :last_name, "Last Name" %>
+              <%= f.label :last_name, "Last name" %>
               <%= f.text_field :last_name, class: "form-control" %>
             </div>
           </div>
@@ -35,6 +35,13 @@
             <div>
               <%= f.label :password %>
               <%= f.password_field :password, class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div>
+              <%= f.label :password_confirmation %>
+              <%= f.password_field :password_confirmation, class: "form-control" %>
             </div>
           </div>
 
