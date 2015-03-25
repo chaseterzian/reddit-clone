@@ -27,7 +27,5 @@ feature 'Anyone can see list of Posts' do
     expect(find_link('All Posts')[:href]).to eq(posts_path)
     click_link 'All Posts'
     expect(current_path).to eq (posts_path)
-
-
   end
 end
