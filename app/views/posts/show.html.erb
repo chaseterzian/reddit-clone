@@ -12,6 +12,7 @@
       <%=comment.body  %>
     </div>
   </div>
+  <h1></h1>
   <% end %>
   <div class="form-horizontal">
     <%= form_for @post.comments.new, url: post_comments_path(@post) do |f| %>
