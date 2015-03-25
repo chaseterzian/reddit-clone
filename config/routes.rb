@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     post '/sign-in' => 'authentication#create'
     get '/sign-out' => 'authentication#destroy', as: :signout
 
-    resources :posts
+    resources :posts do
+      resources :comments, except: [:index]
+    end
 
 end
