@@ -15,7 +15,18 @@ feature 'Anyone can see list of Posts' do
   scenario 'root page displays index of all posts' do
     visit root_path
     expect(page).to have_content 'Posts'
-    expect(page).to have_content 'Kill Zombies'
+    expect(page).to have_link 'Kill Zombies'   #changed
     expect(page).to have_content 'Need a lawyer?'
+  end
+
+  scenario 'show page contains information for the post, and comments on the post' do
+    expect(page).to have_content 'Posts'
+    expect(page).to have_content 'Kill Zombies'
+    expect(page).to have_content 'Watch out for bad people and kill all zombies'
+    expect(find_link('All Posts')[:href]).to eq(posts_path)
+    click_link 'All Posts'
+    expect(current_path).to eq (posts_path)
+
+
   end
 end
