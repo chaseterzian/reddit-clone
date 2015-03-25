@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
   before_action do
     @post = Post.find(params[:post_id])
   end
+  before_action :authenticate_user
 
   def create
     @comment = @post.comments.new(comment_params)

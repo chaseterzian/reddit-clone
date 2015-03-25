@@ -6,7 +6,7 @@
 <% @post.comments.each do |comment| %>
   <div class="row">
     <div class="col-md-3">
-      <%= comment.user %>
+      <%= comment.user.full_name %>
     </div>
     <div class="col-md-9">
       <%=comment.body  %>
