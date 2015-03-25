@@ -1,29 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Yoyo</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+  <div class="container">
 
-  <div>
-    <% if current_user %>
-    <%= link_to "Sign Out", signout_path %>
-    <% else %>
-    <%= link_to "Sign Up", signup_path %>
-    |
-    <%= link_to "Sign In", signin_path %>
-    <% end %>
+    <title>Yoyo</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+
+    <div>
+      <% if current_user %>
+      <%= link_to "Sign Out", signout_path %>
+      <% else %>
+      <%= link_to "Sign Up", signup_path %>
+      |
+      <%= link_to "Sign In", signin_path %>
+      <% end %>
+    </div>
   </div>
 </head>
 <body>
+  <div class="container">
 
-  <% if notice %>
-  <%= notice %>
-  <% end %>
+    <% if notice %>
+    <%= notice %>
+    <% end %>
 
 
-  <%= yield %>
+    <%= yield %>
+  </div>
 
 </body>
 </html>
