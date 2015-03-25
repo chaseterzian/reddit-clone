@@ -7,6 +7,13 @@ class ApplicationController < ActionController::Base
     User.find_by(id: session[:user_id])
   end
 
+  def authenticate_user
+    if !current_user
+      flash[:notice] = "You must register or log in before you can do that! Fool!"
+      redirect_to root_path
+    end
+  end
+
   helper_method :current_user
-  
+
 end

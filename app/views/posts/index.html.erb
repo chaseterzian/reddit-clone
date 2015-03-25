@@ -1,9 +1,11 @@
 <h1>Posts</h1>
+<% if current_user %>
+  <%= link_to "Create New Post", new_post_path %>
+<% end %>
 <hr>
 
 <% @posts.each do |post| %>
-
 <%= link_to post.title, post_path(post) %>
-
+<hr>
 
 <% end %>
