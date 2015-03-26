@@ -8,15 +8,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
 
-    <div>
-      <% if current_user %>
-      <%= link_to "Sign Out", signout_path %>
-      <% else %>
-      <%= link_to "Sign Up", signup_path %>
-      |
-      <%= link_to "Sign In", signin_path %>
-      <% end %>
-    </div>
+
   </div>
 </head>
 <body>
@@ -31,4 +23,17 @@
   </div>
 
 </body>
+<footer>
+  <div class="container">
+    <div>
+      <% if current_user %>
+      <%= link_to "Sign Out", signout_path %>
+      <% else %>
+      <%= link_to "Sign Up", signup_path %>
+      |
+      <%= link_to "Sign In", signin_path %>
+      <% end %>
+    </div>
+  </div>
+</footer>
 </html>
